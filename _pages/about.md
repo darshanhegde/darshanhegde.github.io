@@ -2,23 +2,22 @@
 layout: about
 title: about
 permalink: /
-description: <a href="#">Affiliations</a>. Address. Contacts. Moto. Etc.
+description: <a href="#">Affiliations:</a> Senior Software Engineer @ <a href="https://aurora.tech/">Aurora Innovation</a>.
 
 profile:
   align: right
   image: prof_pic.jpg
   address: >
-    <p>555 your office number</p>
-    <p>123 your address street</p>
-    <p>Your City, State 12345</p>
 
-news: true  # includes a list of news items
-selected_papers: true # includes a list of papers marked as "selected={true}"
+news: false  # includes a list of news items
+selected_papers: false # includes a list of papers marked as "selected={true}"
 social: true  # includes social icons at the bottom of the page
 ---
 
-Write your biography here. Tell the world about yourself. Link to your favorite [subreddit](http://reddit.com){:target="\_blank"}. You can put a picture in, too. The code is already in, just name your picture `prof_pic.jpg` and put it in the `img/` folder.
+<a href="#">Personal Research Interests: </a> 3D Perception for Robotic Manipulation, Model based RL, Inverse RL. 
 
-Put your address / P.O. box / other info right below your picture. You can also disable any these elements by editing `profile` property of the YAML header of your `_pages/about.md`. Edit `_bibliography/papers.bib` and Jekyll will render your [publications page](/al-folio/publications/) automatically.
+Presently interested in applying learning to robotic manipulators used in e-commerce fulfillment settings. I also write <a href="/blog">commentories and summaries</a> on latest research in the field. Previously, worked on perception & prediction for self-driving at <a href="https://www.uber.com/">Uber ATG</a>  & <a href="https://www.nvidia.com/en-us/"> NVIDIA </a>. 
 
-Link to your social media connections, too. This theme is set up to use [Font Awesome icons](http://fortawesome.github.io/Font-Awesome/){:target="\_blank"} and [Academicons](https://jpswalsh.github.io/academicons/){:target="\_blank"}, like the ones below. Add your Facebook, Twitter, LinkedIn, Google Scholar, or just disable all of them.
+I graduated from <a href="https://cds.nyu.edu/">Center for Data Science, New York University</a> with MS in data science with deep learning & high performance computing concentration. 
+
+Curriculum Vitae: <a href="/assets/pdf/cv.pdf"> pdf </a>
