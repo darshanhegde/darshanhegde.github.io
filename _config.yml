@@ -68,7 +68,7 @@ panelbear_analytics: XXXXXXXXX # panelbear analytics site ID
 # -----------------------------------------------------------------------------
 
 blog_name: Opinionated Robotics # your blog must have a name for it to show up in the nav bar
-blog_description: A collection of commentories and research summaries at the intersection of robotics & learning. 
+blog_description: A collection of commentaries and research summaries at the intersection of robotics & learning. 
 permalink: /blog/:year/:title/
 
 # Pagination
@@ -139,8 +139,8 @@ plugins:
 
 scholar:
 
-  last_name: Einstein
-  first_name: [Albert, A.]
+  last_name: Hegde
+  first_name: [Darshan]
 
   style: apa
   locale: en
