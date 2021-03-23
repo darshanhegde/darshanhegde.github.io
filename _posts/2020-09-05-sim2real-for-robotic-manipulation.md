@@ -1,3 +1,9 @@
+---
+layout: post
+comments: true
+thumbnail: /assets/img/blog/sim2real-for-manipulation/thumbnail_cover.png
+---
+
 ***25 min read***
 
 <div class="row mt-3">

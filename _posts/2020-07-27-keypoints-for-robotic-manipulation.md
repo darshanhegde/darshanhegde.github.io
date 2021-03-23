@@ -1,3 +1,9 @@
+---
+layout: post
+comments: true
+thumbnail: /assets/img/blog/keypoints-for-manipulation/thumbnail_cover.png
+---
+
 ***15 mins read***
 
 ------------------------------------------

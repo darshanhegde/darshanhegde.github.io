@@ -1,3 +1,9 @@
+---
+layout: post
+comments: true
+thumbnail: /assets/img/blog/heuristics-for-grasping/cover-robot-hands-illustration.jpg
+---
+
 ***20 min read***
 <div class="row mt-3">
     <div class="col-sm mt-3 mt-md-0">
