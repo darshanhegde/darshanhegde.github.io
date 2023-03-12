@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<title>Darshan  Hegde | Heuristics For Robotic Grasping</title>
+<meta name="description" content="A simple, whitespace theme for academics. Based on [*folio](https://github.com/bogoli/-folio) design.
+">
+
+<!-- Open Graph -->
+
+
+<!-- Bootstrap & MDB -->
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" integrity="sha512-MoRNloxbStBcD8z3M/2BmnT+rg4IsMxPkXaGh2zD6LGNNFE80W3onsAhRcMAMrSoyWL9xD7Ert0men7vR8LUZg==" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/css/mdb.min.css" integrity="sha512-RO38pBRxYH3SoOprtPTD86JFOclM51/XTIdEPh5j8sj4tp8jmQIx26twG52UaLi//hQldfrh7e51WzP9wuP32Q==" crossorigin="anonymous" />
+
+<!-- Fonts & Icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"  integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.0/css/academicons.min.css" integrity="sha512-W4yqoT1+8NLkinBLBZko+dFB2ZbHsYLDdr50VElllRcNt2Q4/GSs6u71UHKxB7S6JEMCp5Ve4xjh3eGQl/HRvg==" crossorigin="anonymous">
+<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:100,300,400,500,700|Material+Icons">
+
+<!-- Code Syntax Highlighting -->
+<link rel="stylesheet" href="https://gitcdn.link/repo/jwarby/jekyll-pygments-themes/master/github.css" />
+
+<!-- Styles -->
+
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🤖</text></svg>">
+
+<link rel="stylesheet" href="/assets/css/main.css">
+
+<link rel="canonical" href="/blog/2020/heuristics-for-robotic-grasping/">
+
+<!-- JQuery -->
+<!-- jQuery -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+
+
+<!-- Theming-->
+
+  <script src="/assets/js/theme.js"></script>
+  <!-- Load DarkMode JS -->
+<script src="/assets/js/dark_mode.js"></script>
+
+
+
+
+
+
+    
+<!-- MathJax -->
+<script type="text/javascript">
+  window.MathJax = {
+    tex: {
+      tags: 'ams'
+    }
+  };
+</script>
+<script defer type="text/javascript" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3.1.2/es5/tex-mml-chtml.js"></script>
+<script defer src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+
+
+  </head>
+
+  <body class="fixed-top-nav ">
+
+    <!-- Header -->
+
+    <header>
+
+    <!-- Nav Bar -->
+    <nav id="navbar" class="navbar navbar-light navbar-expand-sm fixed-top">
+    <div class="container">
+      
+      <a class="navbar-brand title font-weight-lighter" href="/">
+       <span class="font-weight-bold">Darshan</span>   Hegde
+      </a>
+      
+      <!-- Navbar Toggle -->
+      <button class="navbar-toggler collapsed ml-auto" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar top-bar"></span>
+        <span class="icon-bar middle-bar"></span>
+        <span class="icon-bar bottom-bar"></span>
+      </button>
+      <div class="collapse navbar-collapse text-right" id="navbarNav">
+        <ul class="navbar-nav ml-auto flex-nowrap">
+          <!-- About -->
+          <li class="nav-item ">
+            <a class="nav-link" href="/">
+              about
+              
+            </a>
+          </li>
+          
+          <!-- Blog -->
+          <li class="nav-item active">
+            <a class="nav-link" href="/blog/">
+              blog
+              
+            </a>
+          </li>
+          
+          <!-- Other pages -->
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <li class="nav-item ">
+              <a class="nav-link" href="/projects/">
+                projects
+                
+              </a>
+          </li>
+          
+          
+          
+          <li class="nav-item ">
+              <a class="nav-link" href="/publications/">
+                publications
+                
+              </a>
+          </li>
+          
+          
+          
+          <li class="nav-item ">
+              <a class="nav-link" href="/teaching/">
+                teaching
+                
+              </a>
+          </li>
+          
+          
+          
+            <div class = "toggle-container">
+              <a id = "light-toggle">
+                  <i class="fas fa-moon"></i>
+                  <i class="fas fa-sun"></i>
+              </a>
+            </div>
+          
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+</header>
+
+
+    <!-- Content -->
+
+    <div class="container mt-5">
+      
+
+<div class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">Heuristics For Robotic Grasping</h1>
+    <p class="post-meta">June 10, 2020</p>
+  </header>
+
+  <article class="post-content">
+    <p><strong><em>20 min read</em></strong></p>
+<div class="row mt-3">
+    <div class="col-sm mt-3 mt-md-0">
+        <img class="img-fluid rounded z-depth-1" src="/assets/img/blog/heuristics-for-grasping/cover-robot-hands-illustration.jpg" />
+    </div>
+</div>
+<p>PC: <a href="https://samchivers.com/Nature-Magazine-Robot-Hands">Nature-Magazine-Robot-Hands</a></p>
+
+<hr />
+
+<h2 id="this-article-contains-heuristics-for-following"><strong>This article contains heuristics for following:</strong></h2>
+
+<ul>
+  <li>Parallel jaw grasps.</li>
+  <li>Suction grasps.</li>
+  <li>Linear push policies for improving parallel jaw grasps.</li>
+  <li>Toppling policies for improving suction grasps.</li>
+</ul>
+
+<hr />
+
+<p>Grasping is one of the fundamental subtask of a robotic manipulation pipeline. Both learning based and physics / geometry based grasping methods can benefit from grasp sampling heuristics in this article. Even if you are using <a href="https://ai.googleblog.com/2016/03/deep-learning-for-robots-learning-from.html">a large arm farm to teach your robots the skills of grasping</a>, you can save your robots quite a lot of time with these heuristics. This article summarizes the most common grasp sampling heuristics used in literature.</p>
+
+<p>Some of the common ways to use these heuristics are:</p>
+
+<ul>
+  <li><strong>Generating labels for learning based grasp planners (offline):</strong> 6-DOF GraspNet [4] uses these samplers for evaluation with physics based simulation. Grasps that retain the object between the gripper are considered successful after a predefined shaking motion. DexNet [2][3] evaluates these grasps based on analytic quasi-static grasp wrench space (GWS) analysis. Both methods score these sampled grasps based on how good they are in resisting disturbances. These scores are used as labels for training the grasp planners.</li>
+  <li><strong>During grasp synthesis (inference):</strong> DexNet [2][3] uses these sampled grasps as seeds for Cross Entropy Method (CEM), and optimizes grasps based on predicted grasp quality from GQ-CNN (Grasp Quality Convolutional Network). Traditional geometric methods, prune these candidate grasps if they are kinematically infeasible or if they result in collision between gripper and other objects or environment. The best of these samples are picked for execution.</li>
+</ul>
+
+<p>We will summarize the details of heuristics for each type of grippers used for manipulation.</p>
+
+<h1 id="parallel-jaw-grasps">Parallel jaw grasps</h1>
+
+<div class="row mt-3">
+    <div class="col-sm mt-3 mt-md-0">
+        <img class="img-fluid rounded z-depth-1" src="/assets/img/blog/heuristics-for-grasping/parallel_jaw.jpg" />
+    </div>
+</div>
+
+<p>Parallel jaw grasps jam the object between the grippers (Most often the grippers have rubber on them to increase the size of friction cones and thus the robustness of the grasp). Typically, the success of parallel jaw grasp depends on local geometry around the grasp point like if the grasp fits inside the gripper, friction btw gripper and object surface, mass of the object.</p>
+
+<p><strong>Force Closure:</strong> If the contact points on the object are such that forces applied on those points don’t result in slippage and can resist gravity then force closure ( object doesn’t move with respect to the gripper ) is achieved, the grasp is considered successful.</p>
+
+<p><strong>Parametrization:</strong> Parallel Jaw Grasps are typically parametrized by 6-DOF pose of the gripper with initial configuration of open gripper.</p>
+
+<div class="row mt-3">
+    <div class="col-sm mt-3 mt-md-0">
+        <img class="img-fluid rounded z-depth-1" src="/assets/img/blog/heuristics-for-grasping/friction_cones.png" />
+    </div>
+</div>
+
+<p>Illustration shows the friction cones and forces applied by fingers at contact points on a cuboid. This illustration doesn’t account for gravity. Picture Credit: <a href="https://arxiv.org/abs/1905.00134v2">https://arxiv.org/abs/1905.00134v2</a></p>
+
+<p>A Billion ways to grasp [1] summarizes several heuristics for parallel jaw grippers and evaluates their precision and coverage w.r.t a uniform sampler.</p>
+
+<p><strong>Assumption:</strong> Access to the 3D triangle mesh or 3D point cloud of the object so that surface normals can be computed.</p>
+
+<p>Here are the two most effective heuristics that are purely based on geometry:</p>
+
+<p><strong>Approach based samplers:</strong></p>
+
+<p>These methods are characterized by approach vector of the gripper (red-dashed line) which typically aligns with normal to the palm (purple axis).</p>
+
+<div class="row mt-3">
+    <div class="col-sm mt-3 mt-md-0">
+        <img class="img-fluid rounded z-depth-1" src="/assets/img/blog/heuristics-for-grasping/approach_sampler.png" />
+    </div>
+</div>
+
+<p>Approach based sampler. Picture Credit: Billion ways to Grasp [1]</p>
+
+<p>Pseudo code for approach based sampler:</p>
+
+<p>Notations:</p>
+<ul>
+  <li>G → Gripper frame.</li>
+  <li>\(purple, red, green\) → \(z, y, x\) of the gripper frame G.</li>
+  <li>\(\vec{p}\) → Randomly chosen point on object surface.</li>
+  <li>\(\vec{n}\) → Surface normal at point \(\vec{p}\).</li>
+  <li>\(d\) → distance from gripper origin \(\vec{g}\) to point \(\vec{p}\)</li>
+  <li>\(\vec{gp}\) → Gripper approach direction.</li>
+  <li>α → angle between \(\vec{n}\) and \(\vec{gp}\)</li>
+  <li>β → angle between z axis of gripper frame G and gripper approach \(\vec{gp}\)</li>
+</ul>
+
+<p>For generating each sample:</p>
+<ul>
+  <li>Sample normal vector \(\vec{p}\) from the surface of the object.</li>
+  <li>α → uniform_sample(0, π/2)</li>
+  <li>β → 0</li>
+  <li>d → uniform_sample(0, L)</li>
+  <li>γ → uniform_sample(0, 2π)</li>
+  <li>Choose the gripper sample pose \(\hat{G}\) such that sampled α, β, γ and d satisfied.</li>
+  <li>If sample \(\hat{G}\) results in collision with the object or object volume between the fingers is zero, discard the sample.</li>
+</ul>
+
+<p><strong>Antipodal based samplers:</strong></p>
+
+<p>These methods sample directly on the space of possible contact points and try to exploit the grasps that create force closure.</p>
+
+<div class="row mt-3">
+    <div class="col-sm mt-3 mt-md-0">
+        <img class="img-fluid rounded z-depth-1" src="/assets/img/blog/heuristics-for-grasping/antipodal_sampler.png" />
+    </div>
+</div>
+
+<p>Antipodal based sampler. Picture Credit: Billion ways to Grasp [1]</p>
+
+<p>Pseudo code for antipodal grasp sampler:</p>
+
+<p>Notations:</p>
+
+<ul>
+  <li>G → Gripper frame.</li>
+  <li>\({purple, red, green}\) → \({z, y, x}\) of the gripper frame G.</li>
+  <li>\(\vec{p}\) → Randomly chosen point on object surface.</li>
+  <li>\(\vec{n}\) → Surface normal at point \(\vec{p}\).</li>
+  <li>\(s_{min}\) → distance from gripper origin \(\vec{g}\) to closest on antipodal grasp ray (Stand-off distance)</li>
+  <li>\(\alpha\) → Angle between the normal \(\vec{n}\) and antipodal grasp ray.</li>
+  <li>\(\gamma\) → rotation around antipodal grasp ray.</li>
+</ul>
+
+<p>For generating each sample</p>
+<ul>
+  <li>sample a point \(\vec{p}\) on the object surface</li>
+  <li>\(\alpha\) → uniform_sample(0, \(\pi/6\))</li>
+  <li>\(s_{min}\) → 0</li>
+  <li>\(\gamma\) → uniform_sample(0, \(2\pi\))</li>
+  <li>Antipodal point \(p^{\prime}\) is choosen such that farthest intersection point along the antipodal grasp ray.</li>
+  <li>Choose grasp sample \(\hat{G}\) with the center of line segment \(\vec{p}\) \(\vec{p}^\prime\) + \(d\) and rotatated \(\gamma\) w.r.t antipodal grasp ray.
+If sample \(\hat{G}\) results in collision with the object or object volume between the fingers is zero, discard the sample.</li>
+</ul>
+
+<p><strong>Comparing the two parallel-jaw heuristics</strong></p>
+
+<p>Billion ways to grasp [1] evaluates grasps based on two metrics:</p>
+
+<ul>
+  <li><strong>Robust coverage:</strong> Percent of robust grasps (still successful in a small ϵ-neighborhood) sampled w.r.t oracle uniform sampler. This is very similar to recall.</li>
+  <li><strong>Precision:</strong> Percent of the successful grasps among the sampled.</li>
+</ul>
+
+<div class="row mt-3">
+    <div class="col-sm mt-3 mt-md-0">
+        <img class="img-fluid rounded z-depth-1" src="/assets/img/blog/heuristics-for-grasping/eval_parallel_jaw_1.png" />
+    </div>
+</div>
+
+<p>Robust coverage vs number of grasp samples. We only look at Uniform, Approach(π/2, 0) and Antipodal(π/6), which are best in each category. (Higher is better)</p>
+
+<div class="row mt-3">
+    <div class="col-sm mt-3 mt-md-0">
+        <img class="img-fluid rounded z-depth-1" src="/assets/img/blog/heuristics-for-grasping/eval_parallel_jaw_2.png" />
+    </div>
+</div>
+
+<p>Precision of each category. Approach(π/2, 0) and Antipodal(π/6), which are best in each category. Higher is better during inference.</p>
+
+<p>As seen by the conclusion of Billion ways to grasp[1] from the tables, if you have a limited sampling budget antipodal sampling scheme provides both highest coverage and precision. However, asymptotically misses several ground truth grasps. These correspond to small scale features on objects and along the edges of objects.</p>
+
+<p>Visual illustration of what these sampled successful grasps and robust successful grasps look like. Each point is the grasp center and notice how robust grasps are clustered around object parts that fit nicely inside the gripper.</p>
+
+<div class="row mt-3">
+    <div class="col-sm mt-3 mt-md-0">
+        <img class="img-fluid rounded z-depth-1" src="/assets/img/blog/heuristics-for-grasping/eval_qual_parallel_jaw.png" />
+    </div>
+</div>
+<p>Picture Credit: Billion ways to Grasp [1]</p>
+
+<h1 id="suction-grippers">Suction grippers</h1>
+
+<div class="row mt-3">
+    <div class="col-sm mt-3 mt-md-0">
+        <img class="img-fluid rounded z-depth-1" src="/assets/img/blog/heuristics-for-grasping/suction.jpeg" />
+    </div>
+</div>
+
+<p>Suction grippers form vacuum seal on the surface of the object and if that vacuum force is sufficient to resist the gravity and external wrenches, the grasp is robust. Typically suction grasp success depends on surface porousness, local geometry, mass and payload capacity of the suction gripper. These grippers are most popular for pick and place of objects in warehouse order fulfillment. DexNet 4.0 [6] which is one of the best published bin-picking system that uses composite policy between suction and parallel jaw grasps, chooses suction grasps for about 82% of attempts.</p>
+
+<p><strong>Parametrization:</strong> Suction grasps are typically parameterized by point <em>p</em> on the object surface and approach vector <em>v</em> as illustrated below.</p>
+
+<div class="row mt-3">
+    <div class="col-sm mt-3 mt-md-0">
+        <img class="img-fluid rounded z-depth-1" src="/assets/img/blog/heuristics-for-grasping/suction_grasp.png" />
+    </div>
+</div>
+
+<p>Illustration of seal formation on non-planar surface from DexNet 3.0 [3]</p>
+
+<p><strong>Planarity Centroid Heuristic:</strong></p>
+
+<p>Since successful suction grasps prefer planar non-porous surfaces, these heuristics try to find sufficiently planar surfaces on the object that are closer to COM (Center of Mass). Approach vectors are chosen along the surface normal because large motion tangential to surface might result in vacuum seal breakage.</p>
+
+<p>Pseudo code for planarity centroid heuristic:</p>
+
+<p>Notations:</p>
+<ul>
+  <li>\(\vec{p}\) → Suction point on the surface of the object.</li>
+  <li>\(\vec{v}\) → Approach vector for suction grasp.</li>
+  <li>\(COM\) → Center of Mass</li>
+  <li>\(PC_{full}\) → Full point cloud of the scene.</li>
+  <li>\(PC_{exclude}\) → Exclude point cloud. \(PC_{0} = \emptyset\) for the \(1^{st}\) sample.</li>
+</ul>
+
+<p>For generating each sample:</p>
+<ul>
+  <li>Fit a plane to point cloud data \(PC_{full}\) using RANSAC excluding \(PC_{exclude}\).</li>
+  <li>Sample a planar patch of vaccum cup size on the plane closest to COM.</li>
+  <li>\(\vec{p_i}\) → Center of the planar patch.</li>
+  <li>\(\vec{v_i}\) → -ve of the normal at that point.</li>
+  <li>Add inliers of the sampled patch to \(PC_{exclude}\)</li>
+  <li>Choose the suction grasp \(G_i={p_i, v_i}\) that is closest to COM</li>
+</ul>
+
+<p>Some examples of successful suction grasps on 3D meshes are visualized below.</p>
+
+<div class="row mt-3">
+    <div class="col-sm mt-3 mt-md-0">
+        <img class="img-fluid rounded z-depth-1" src="/assets/img/blog/heuristics-for-grasping/successful_suction_grasps.png" />
+    </div>
+</div>
+
+<p>Illustrates suction grasps on diverse objects from DexNet 3.0 [3]dataset. Each point is a suction grasp sample with red → failed grasp and green → successful grasp.</p>
+
+<p>DexNet 3.0 [3] evaluates suction grasps in physical robot trials based on two metrics:</p>
+
+<ul>
+  <li><strong>Average Precision:</strong> Area under the precision / recall curve. How good is the heuristic in scoring high quality grasps ?</li>
+  <li><strong>Success Rate:</strong> Fraction of the grasps that were successful.</li>
+</ul>
+
+<div class="row mt-3">
+    <div class="col-sm mt-3 mt-md-0">
+        <img class="img-fluid rounded z-depth-1" src="/assets/img/blog/heuristics-for-grasping/eval_suction_1.png" />
+    </div>
+</div>
+
+<p>Object categories used for physical robot experiments in DexNet 3.0 [3]</p>
+
+<div class="row mt-3">
+    <div class="col-sm mt-3 mt-md-0">
+        <img class="img-fluid rounded z-depth-1" src="/assets/img/blog/heuristics-for-grasping/eval_suction_2.png" />
+    </div>
+</div>
+
+<p>How well each heuristic performed on different objects in robot physical experiments. Picture credit: DexNet 3.0 [3]. For both metrics higher is better.</p>
+
+<p>As can be seen from the table above, Planarity Centroid Heuristic does quite well compared to even learnt method DexNet 3.0 [3] on basic and typical objects.</p>
+
+<p>Some of the failure cases of suction grasps are categorized as below:</p>
+
+<div class="row mt-3">
+    <div class="col-sm mt-3 mt-md-0">
+        <img class="img-fluid rounded z-depth-1" src="/assets/img/blog/heuristics-for-grasping/eval_qual_suction.png" />
+    </div>
+</div>
+
+<p>Failure cases from DexNet 3.0 [3]. Imperceptible objects have small holes in them or have high curvature that prevents the vacuum seal and Impossible objects are porous.</p>
+
+<h1 id="adaptive-sampler">Adaptive sampler:</h1>
+
+<p>These methods use heuristics that exploit the geometry to generate seed samples (described above) and further optimize the grasp according to grasp quality metric. Most often these are blackbox optimization technique such as cross entropy method (CEM) that doesn’t exploit object geometry. Although CEM is an optimization algorithm used in many areas, I would still consider it a heuristic since it doesn’t exploit the object geometries while sampling.</p>
+
+<p><strong>Additional assumption:</strong> Access to grasp quality function such as DexNet 2.0 / DexNet 3.0 Grasp Quality Network (GQ-CNN) or ability to evaluate quality of grasps in realtime based on GWS.</p>
+
+<h2 id="cross-entropy-method-cem">Cross Entropy Method (CEM)</h2>
+
+<p>Notations:</p>
+<ul>
+  <li>m → Number of iterations</li>
+  <li>n → Number of intital grasp samples.(These are 6-DOF gripper pose \(\hat{G}\) for parallel jaw and \({\vec{p}, \vec{v}}\) for suction grasp).</li>
+  <li>\(U\) → Set of grasp samples.</li>
+  <li>\(\xi\) → Set of elite samples.</li>
+  <li>\(\gamma\) → Elite percentage, subset of the initial samples from \(U\). Typically &lt; 50%</li>
+  <li>\(k\) → Number of mixtures used in gaussian mixture model (GMM) \(M\).</li>
+  <li>\(Q_{\theta}\) → Grasp Quality Function.</li>
+</ul>
+
+<p>Algorithm:</p>
+
+<p>\(U\) → Uniform sample of grasps \(\hat{G}_i\). For i = 1, … m:</p>
+
+<ul>
+  <li>\(\xi\) → top \(\gamma\) percentile of \(U\) ranked by \(Q_{\theta}\)</li>
+  <li>\(M\) → Fit GMM to \(\xi\) with \(k\) mixtures.</li>
+  <li>\(U\) → n iid samples from \(M\).</li>
+</ul>
+
+<p>Return the best grasp according to \(\arg\max_{u \in U} Q_{\theta}\)</p>
+
+<p>If you were familiar with CEM, you may have noticed the use of GMM instead of Gaussians and this is because distribution of grasps on most objects are multi-modal.</p>
+
+<p>Some examples of applying CEM method to DexNet 2.0 (parallel jaw grasps )and DexNet 3.0 (suction grasps) grasp quality functions to generate most robust grasps.</p>
+
+<div class="row mt-3">
+    <div class="col-sm mt-3 mt-md-0">
+        <img class="img-fluid rounded z-depth-1" src="/assets/img/blog/heuristics-for-grasping/grasp_robustness_viz.png" />
+    </div>
+</div>
+
+<p>CEM method used by DexNet 2.0 [2] Marked in Black is the grasp output by CEM, which is very close to global maximum according to the robustness predictions \(𝑄_𝜃\)</p>
+
+<div class="row mt-3">
+    <div class="col-sm mt-3 mt-md-0">
+        <img class="img-fluid rounded z-depth-1" src="/assets/img/blog/heuristics-for-grasping/grasp_robustness_optimized.png" />
+    </div>
+</div>
+
+<p>CEM method used by DexNet 3.0 [3] Also, in this case CEM method finds the best suction grasp predicted by 𝑄𝜃</p>
+
+<h1 id="improving-chances-of-grasping">Improving chances of grasping</h1>
+
+<p>Sometimes neither suction grasp not parallel jaw grasp is able to pick up any object in the heap. This is mostly due to inability to perceive robust grasps (occlusion) or inability to execute the perceived grasp ( collision or kinematic infeasibility ). In those cases non-prehensile ( fancy word for non-graspable ) actions are executed to either singulate the object to expose enough clearance for parallel jaw grasps or topple the object to expose a planar surface for suction grasps.</p>
+
+<blockquote>
+  <p><strong>CAUTION:</strong> The following policies have not been tested on a real robot, so the results and conclusions don’t necessarily transfer.</p>
+</blockquote>
+
+<p><strong>Parametrization:</strong> Push vector <em>(p, q)</em> where p = {x, y, z} starting point and q = {x’, y’, z’} is the end point.</p>
+
+<h1 id="linear-pushing">Linear Pushing</h1>
+
+<p>Linear pushing policies typically help with separating the object heap so that parallel jaw grasps are accessible.</p>
+
+<div class="row mt-3">
+    <div class="col-sm mt-3 mt-md-0">
+        <img class="img-fluid rounded z-depth-1" src="/assets/img/blog/heuristics-for-grasping/linear_pushing.png" />
+    </div>
+</div>
+
+<p>Illustration of linear pushing before (left) and after (right) in simulation (above) and real robot (below). PC: [5]</p>
+
+<p><strong>Additional assumptions:</strong> Semantic instance segmentation of the objects on the bin so that each objects position on the bin is observed. Free space segmentation of the bin is also used in the linear pushing policies for choosing the push direction.</p>
+
+<p><strong>Free Space Policy:</strong></p>
+
+<p>Aims to separate the two closest objects in the heap by pushing them towards the free space.</p>
+
+<p><strong>Pseudo-code:</strong></p>
+
+<p>Notations:</p>
+<ul>
+  <li>\(\hat{c_i}\) &amp; \(\hat{c_j}\) → Center of mass estimates of two closest objects in the heap.</li>
+  <li>\(p_i\) &amp; \(p_j\) → Maximal free space points that are closest to \(\hat{c_i}\) &amp; \(\hat{c_j}\) respectively.</li>
+</ul>
+
+<p>Algorithm:</p>
+<ul>
+  <li>Find 2 closest objects with COM \(\hat{c_i}\) &amp; \(\hat{c_j}\)</li>
+  <li>Draw lines \(\overline{c_ip_i}\) &amp; \(\overline{c_jp_j}\) to the corresponding maximal free space points.</li>
+  <li>For each object \(i\) find collision free (between gripper &amp; other objects / bin) push segment that goes through COM \(c_i\) and closest to \(\overline{c_ip_i}\).</li>
+  <li>Choose the push segment \(\overline{cp}\) with the shortest length.</li>
+</ul>
+
+<p><strong>Boundary Shear Policy:</strong></p>
+
+<p>Aims to separate two closest objects in the heap by pushing one of the objects along the boundary between the objects.</p>
+
+<p><strong>Pseudo-code:</strong></p>
+
+<p>Notations:</p>
+<ul>
+  <li>\(\hat{c_i}\) &amp; \(\hat{c_j}\) → Center of mass estimates of two closest objects in the heap.</li>
+</ul>
+
+<p>Algorithm:</p>
+<ul>
+  <li>Find 2 closest objects with COM \(\hat{c_i}\) &amp; \(\hat{c_j}\)</li>
+  <li>Construct the line \(\overline{c_ic_j}\) projected to the support surface and it’s perpendicular \(\overline{c_ic_j}_{\bot}\)</li>
+  <li>Generate 4 possible push vectors parallel to \(\overline{c_ic_j}_{\bot}\) and passing through \(\hat{c_i}\) &amp; \(\hat{c_j}\) in each direction.</li>
+  <li>Choose the push direction closest to free space and collision freel.</li>
+</ul>
+
+<p>Facilitating Grasping [5] evaluates above policies and few others in simulation in clearing the object heaps that don’t have accessible grasps and measures the confidence gain of both grasp types. As can be seen the linear pushing policies make the parallel jaw grasps more accessible than suction grasps.</p>
+
+<div class="row mt-3">
+    <div class="col-sm mt-3 mt-md-0">
+        <img class="img-fluid rounded z-depth-1" src="/assets/img/blog/heuristics-for-grasping/comparing_pushing.png" />
+    </div>
+</div>
+
+<p>Confidence gain of both parallel jaw and suction grasping policy on according Facilitating Grasping [5]</p>
+
+<div class="row mt-3">
+    <div class="col-sm mt-3 mt-md-0">
+        <img class="img-fluid rounded z-depth-1" src="/assets/img/blog/heuristics-for-grasping/comparing_pushing_qual.png" />
+    </div>
+</div>
+
+<p>Example of before / after of linear pushing policies described above in simulated object heaps. PC: Facilitating Grasping [5].</p>
+
+<h2 id="singulated-object-toppling">Singulated Object Toppling</h2>
+
+<p>Facilitating grasping [5] also explores policies for toppling a singulated known 3D object so that quality of suction grasp after toppling can be improved.</p>
+
+<div class="row mt-3">
+    <div class="col-sm mt-3 mt-md-0">
+        <img class="img-fluid rounded z-depth-1" src="/assets/img/blog/heuristics-for-grasping/object_topling.png" />
+    </div>
+</div>
+
+<p>Topping to facilitate the top-down suction grasp. PC: Facilitating grasping [5]</p>
+
+<p><strong>Assumptions:</strong> Known 3D object with known transition distribution of stable resting poses \(P(x_{t+1} / x_t, u_t)\) and access to suction grasp quality function \( V_s(x_t) \).</p>
+
+<p><strong>Max Height Policy:</strong></p>
+
+<p>Highest possible point on the object that has surface normal within 15 degree of the supporting plane normal. This policy only gets executed if \(V_s(x_{t+1}) &gt; V_s(x_t)\).</p>
+
+<p><strong>Greedy Policy:</strong></p>
+
+<p>Pick the action that makes the expected suction grasp more accessible.</p>
+
+<div class="row mt-3">
+    <div class="col-sm mt-3 mt-md-0">
+        <img class="img-fluid rounded z-depth-1" src="/assets/img/blog/heuristics-for-grasping/greedy_policy_eq.png" />
+    </div>
+</div>
+
+<p>Facilitating grasping [5] evaluates these policies in simulation and compares against a policy that runs complete value iteration based on \(P(x_{t+1} / x_t, u_t)\) and \(V_s(x_t)\).</p>
+
+<div class="row mt-3">
+    <div class="col-sm mt-3 mt-md-0">
+        <img class="img-fluid rounded z-depth-1" src="/assets/img/blog/heuristics-for-grasping/greedy_policy_compare.png" />
+    </div>
+</div>
+
+<p>The greedy toppling policy does fairly well compared to best performing value iteration with much less runtime PC: [5]</p>
+
+<h2 id="conclusion"><strong>Conclusion:</strong></h2>
+<p>This post explored different subtasks used for grasping and several effective heuristics for them. Please explore the references for more details on learning based / more effective policies. These heuristics are meant to provide intuition on each of the grasping subtasks and how they measure up to some of the more advanced methods.</p>
+
+<h1 id="references">References:</h1>
+
+<p>[1] <a href="https://arxiv.org/abs/1912.05604">A Billion Ways to Grasp: An Evaluation of Grasp Sampling Schemes on a Dense, Physics-based Grasp Data Set</a></p>
+
+<p>[2] <a href="https://arxiv.org/abs/1703.09312">Dex-Net 2.0: Deep Learning to Plan Robust Grasps with Synthetic Point Clouds and Analytic Grasp Metrics</a></p>
+
+<p>[3] <a href="https://arxiv.org/abs/1709.06670">Dex-Net 3.0: Computing Robust Robot Vacuum Suction Grasp Targets in Point Clouds using a New Analytic Model and Deep Learning</a></p>
+
+<p>[4] <a href="https://arxiv.org/abs/1905.10520">6-DOF GraspNet: Variational Grasp Generation for Object Manipulation</a></p>
+
+<p>[5] <a href="https://www2.eecs.berkeley.edu/Pubs/TechRpts/2019/EECS-2019-80.html">Facilitating Robotic Grasping using Pushing and Toppling</a></p>
+
+<p>[6] <a href="https://robotics.sciencemag.org/content/4/26/eaau4984.full?ijkey=IogH9u4mOL70s&amp;keytype=ref&amp;siteid=robotics">Dex-Net 4.0: Learning ambidextrous robot grasping policies</a></p>
+
+  </article>
+
+  
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+      var disqus_shortname  = 'darshanhegde';
+      var disqus_identifier = '/blog/2020/heuristics-for-robotic-grasping';
+      var disqus_title      = "Heuristics For Robotic Grasping";
+      (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  
+
+</div>
+
+    </div>
+
+    <!-- Footer -->
+
+    
+<footer class="fixed-bottom">
+  <div class="container mt-0">
+    &copy; Copyright 2023 Darshan  Hegde.
+    Powered by <a href="http://jekyllrb.com/" target="_blank">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio">al-folio</a> theme. Hosted by <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>. Photos from <a href="https://unsplash.com" target="_blank">Unsplash</a>.
+
+    
+    
+  </div>
+</footer>
+
+
+
+  </body>
+
+  <!-- Bootsrap & MDB scripts -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.4.4/umd/popper.min.js" integrity="sha512-eUQ9hGdLjBjY3F41CScH3UX+4JDSI9zXeroz7hJ+RteoCaY+GP/LDoM8AO+Pt+DRFw3nXqsjh9Zsts8hnYv8/A==" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha512-M5KW3ztuIICmVIhjSqXe01oV2bpe248gOxqmlcYrEzAvws7Pw3z6BK0iGbrwvdrUQUhi3eXgtxp5I8PDo9YfjQ==" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/js/mdb.min.js" integrity="sha512-Mug9KHKmroQFMLm93zGrjhibM2z2Obg9l6qFG2qKjXEXkMp/VDkI4uju9m4QKPjWSwQ6O2qzZEnJDEeCw0Blcw==" crossorigin="anonymous"></script>
+
+  
+<!-- Mansory & imagesLoaded -->
+<script defer src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+<script defer src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
+<script defer src="/assets/js/mansory.js" type="text/javascript"></script>
+
+
+  
+
+
+<!-- Load Common JS -->
+<script src="/assets/js/common.js"></script>
+
+
+</html>

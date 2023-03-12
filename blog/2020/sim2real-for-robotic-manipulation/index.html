@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<title>Darshan  Hegde | Sim2real For Robotic Manipulation</title>
+<meta name="description" content="A simple, whitespace theme for academics. Based on [*folio](https://github.com/bogoli/-folio) design.
+">
+
+<!-- Open Graph -->
+
+
+<!-- Bootstrap & MDB -->
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" integrity="sha512-MoRNloxbStBcD8z3M/2BmnT+rg4IsMxPkXaGh2zD6LGNNFE80W3onsAhRcMAMrSoyWL9xD7Ert0men7vR8LUZg==" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/css/mdb.min.css" integrity="sha512-RO38pBRxYH3SoOprtPTD86JFOclM51/XTIdEPh5j8sj4tp8jmQIx26twG52UaLi//hQldfrh7e51WzP9wuP32Q==" crossorigin="anonymous" />
+
+<!-- Fonts & Icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"  integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.0/css/academicons.min.css" integrity="sha512-W4yqoT1+8NLkinBLBZko+dFB2ZbHsYLDdr50VElllRcNt2Q4/GSs6u71UHKxB7S6JEMCp5Ve4xjh3eGQl/HRvg==" crossorigin="anonymous">
+<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:100,300,400,500,700|Material+Icons">
+
+<!-- Code Syntax Highlighting -->
+<link rel="stylesheet" href="https://gitcdn.link/repo/jwarby/jekyll-pygments-themes/master/github.css" />
+
+<!-- Styles -->
+
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🤖</text></svg>">
+
+<link rel="stylesheet" href="/assets/css/main.css">
+
+<link rel="canonical" href="/blog/2020/sim2real-for-robotic-manipulation/">
+
+<!-- JQuery -->
+<!-- jQuery -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+
+
+<!-- Theming-->
+
+  <script src="/assets/js/theme.js"></script>
+  <!-- Load DarkMode JS -->
+<script src="/assets/js/dark_mode.js"></script>
+
+
+
+
+
+
+    
+<!-- MathJax -->
+<script type="text/javascript">
+  window.MathJax = {
+    tex: {
+      tags: 'ams'
+    }
+  };
+</script>
+<script defer type="text/javascript" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3.1.2/es5/tex-mml-chtml.js"></script>
+<script defer src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+
+
+  </head>
+
+  <body class="fixed-top-nav ">
+
+    <!-- Header -->
+
+    <header>
+
+    <!-- Nav Bar -->
+    <nav id="navbar" class="navbar navbar-light navbar-expand-sm fixed-top">
+    <div class="container">
+      
+      <a class="navbar-brand title font-weight-lighter" href="/">
+       <span class="font-weight-bold">Darshan</span>   Hegde
+      </a>
+      
+      <!-- Navbar Toggle -->
+      <button class="navbar-toggler collapsed ml-auto" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar top-bar"></span>
+        <span class="icon-bar middle-bar"></span>
+        <span class="icon-bar bottom-bar"></span>
+      </button>
+      <div class="collapse navbar-collapse text-right" id="navbarNav">
+        <ul class="navbar-nav ml-auto flex-nowrap">
+          <!-- About -->
+          <li class="nav-item ">
+            <a class="nav-link" href="/">
+              about
+              
+            </a>
+          </li>
+          
+          <!-- Blog -->
+          <li class="nav-item active">
+            <a class="nav-link" href="/blog/">
+              blog
+              
+            </a>
+          </li>
+          
+          <!-- Other pages -->
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <li class="nav-item ">
+              <a class="nav-link" href="/projects/">
+                projects
+                
+              </a>
+          </li>
+          
+          
+          
+          <li class="nav-item ">
+              <a class="nav-link" href="/publications/">
+                publications
+                
+              </a>
+          </li>
+          
+          
+          
+          <li class="nav-item ">
+              <a class="nav-link" href="/teaching/">
+                teaching
+                
+              </a>
+          </li>
+          
+          
+          
+            <div class = "toggle-container">
+              <a id = "light-toggle">
+                  <i class="fas fa-moon"></i>
+                  <i class="fas fa-sun"></i>
+              </a>
+            </div>
+          
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+</header>
+
+
+    <!-- Content -->
+
+    <div class="container mt-5">
+      
+
+<div class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">Sim2real For Robotic Manipulation</h1>
+    <p class="post-meta">September 5, 2020</p>
+  </header>
+
+  <article class="post-content">
+    <p><strong><em>25 min read</em></strong></p>
+
+<div class="row mt-3">
+    <div class="col-sm mt-3 mt-md-0">
+        <img class="img-fluid rounded z-depth-1" src="/assets/img/blog/sim2real-for-manipulation/cover.png" />
+    </div>
+</div>
+
+<hr />
+
+<p>This article contains details on sim2real in robotic manipulation for following tasks:</p>
+
+<ul>
+  <li>Perception for manipulation (DOPE / SD-MaskRCNN).</li>
+  <li>Grasping (Dex-Net 3.0 / 6DOF GraspNet).</li>
+  <li>End-to-end policies. (Contact rich manipulation tasks &amp; In hand manipulation of rubik’s cube)</li>
+  <li>Guided domain randomization techniques (ADR / Sim-Opt).</li>
+</ul>
+
+<hr />
+
+<h1 id="the-reality-gap"><strong>The reality gap:</strong></h1>
+
+<p>An increasingly impressive skills have been mastered by DeepRL algorithms over the years  in simulation (<a href="https://deepmind.com/research/open-source/dqn">DQN</a> / <a href="https://deepmind.com/research/case-studies/alphago-the-story-so-far">AlphaGo</a> / <a href="https://openai.com/blog/openai-five/">OpenAI Five</a>). Both Deep learning and RL algorithms require super huge amounts of data. Moreover, RL algorithms there is risk to the environment or to the robot during the exploration phase. Simulation offers the promise of huge amounts of data (can be run in parallel and much faster than real time with minimal cost) and doesn’t break your robot during exploration. But these policies trained entirely in simulation fails to generalize on real robot. This gap between impressive performance in simulation and poor performance is known as <strong>the reality gap.</strong></p>
+
+<p>Some of the ways to bridge the reality gap are:</p>
+
+<div class="row mt-3">
+    <div class="col-sm mt-3 mt-md-0">
+        <img class="img-fluid rounded z-depth-1" src="/assets/img/blog/sim2real-for-manipulation/sim2real_1.png" />
+    </div>
+</div>
+
+<p>Illustration of Sim2Real Approaches. PC: <a href="https://lilianweng.github.io/lil-log/">Lil’Log</a> [1]</p>
+
+<ul>
+  <li><strong>System Identification:</strong> Identify exact physical / geometrical / visual parameters of environment relevant to task and model it in simulation.</li>
+  <li><strong>Domain Adaptation:</strong> Transfer learning techniques for transferring / fine-tuning the policies trained in simulation in reality.</li>
+  <li><strong>Domain Randomization:</strong> Randomize the simulations to cover reality as one of the variations.</li>
+</ul>
+
+<p>We’ll mainly be focussing on domain randomization techniques and their extension used in some of the recent and successful sim2real transfers in robotic manipulation.</p>
+
+<h1 id="domain-randomization">Domain Randomization</h1>
+
+<p>Formally domain randomization is defined as:</p>
+
+<div class="row mt-3">
+    <div class="col-sm mt-3 mt-md-0">
+        <img class="img-fluid rounded z-depth-1" src="/assets/img/blog/sim2real-for-manipulation/sim2real_2.png" />
+    </div>
+</div>
+
+<p>P_{mu} is the randomized transition distribution. τ is the trajectory of samples as per policy π in the environment P_{mu}.</p>
+
+<p>So effectively, domain randomization is trying to find a common policy π parameters that work across a wide range of randomized simulations P_{mu}. So the hope is that the policy that works across wide range of randomizations also works in the real world, assuming that the real world is just another randomization covered by randomization.</p>
+
+<p>Based on how these simulation randomization are chosen we have 2 types:</p>
+
+<ul>
+  <li><strong>Domain randomization:</strong> Fixed randomization distributions over a range often chosen by hand. We will see how this has been used in perception &amp; grasping tasks for data efficiency.</li>
+  <li><strong>Guided domain randomization:</strong> Either simulation or real world experiments can be used to change the randomization distribution. We will see how this has been used in training end2end policies for contact rich and dexterous tasks. Some of the guided domain randomizations do appear like domain adaptation.</li>
+</ul>
+
+<h1 id="domain-randomization-1">Domain randomization:</h1>
+
+<p>Some of the early examples of using domain randomizations was used for object localization on primitive shapes[2] and table top pushing[3]. We will look at examples of more advanced tasks such as segmentation and pose estimation with emphasis on what randomizations were chosen and how good are the transfer performance.</p>
+
+<p><strong>Domain Randomization in Perception:</strong></p>
+
+<p><strong>SD Mask R-CNN:</strong> SD (Synthetic Data) Mask R-CNN trains category agnostic instance segmentation entirely based on synthetic dataset with performance superior to that fine-tuned from COCO-dataset.</p>
+
+<div class="row mt-3">
+    <div class="col-sm mt-3 mt-md-0">
+        <img class="img-fluid rounded z-depth-1" src="/assets/img/blog/sim2real-for-manipulation/sim2real_3.png" />
+    </div>
+</div>
+
+<p>Data Generation Procedure for SD-Mask-RCNN. WISDOM (Wear House Instance Segmentation Dataset for Object Manipulation).</p>
+
+<p><strong>Simulator:</strong> <a href="https://pybullet.org/">pybullet</a></p>
+
+<p><strong>Randomizations:</strong> Since this network uses depth images as inputs, the randomizations needed are quite minimal ( depth realistic images are easy to generate compared to photo realistic).</p>
+
+<ul>
+  <li>Sample a number n ∈ p(λ = 5) of objects and drop it in the bin using dynamic simulation. This will sample different objects and different object poses.</li>
+  <li>Sample camera intrinsics K and camera extrinsic (R, t) ∈ SE(3) within a neighborhood of real camera intrinsics and extrinsic setup.</li>
+  <li>Render both the depth image D and foreground object masks M.</li>
+</ul>
+
+<p>The Mask-RCNN trained on instance segmentation entirely on synthetic data (SD-Mask R-CNN) is compared against a couple of baseline segmentation methods and Mask R-CNN trained on COCO dataset &amp; fine-tined (FT Mask R-CNN) on WISDOM-real-train. The test set WISDOM-real-test used here is the real world dataset collected using a high-res and low-res depth cameras and hand labelled segmentation masks.</p>
+
+<div class="row mt-3">
+    <div class="col-sm mt-3 mt-md-0">
+        <img class="img-fluid rounded z-depth-1" src="/assets/img/blog/sim2real-for-manipulation/sim2real_4.png" />
+    </div>
+</div>
+
+<p>Performance of Mask R-CNN. For both AP (Average Precision) and AR (Average Recall) higher is better.</p>
+
+<p>From the ablation study, both metrics go up as number of synthetic data samples are increased indicating more data could help the improve the performance. However, increasing the number of unique objects has mixed results (may be due limited number of objects in WISDOM-real-test).</p>
+
+<div class="row mt-3">
+    <div class="col-sm mt-3 mt-md-0">
+        <img class="img-fluid rounded z-depth-1" src="/assets/img/blog/sim2real-for-manipulation/sim2real_5.png" />
+    </div>
+</div>
+
+<p>Some qualitative comparison of segmentation results from SD Mask R-CNN</p>
+
+<div class="row mt-3">
+    <div class="col-sm mt-3 mt-md-0">
+        <img class="img-fluid rounded z-depth-1" src="/assets/img/blog/sim2real-for-manipulation/sim2real_7.png" />
+    </div>
+</div>
+
+<p><strong>DOPE (Deep Object Pose Estimation):</strong> DOPE solves the problem of pose estimation of YCB objects entirely using synthetic dataset that contain domain randomized and photorealistic RGB images.</p>
+
+<div class="row mt-3">
+    <div class="col-sm mt-3 mt-md-0">
+        <img class="img-fluid rounded z-depth-1" src="/assets/img/blog/sim2real-for-manipulation/sim2real_8.png" />
+    </div>
+</div>
+
+<p><strong>Simulator:</strong> <a href="https://github.com/NVIDIA/Dataset_Synthesizer">UE4 with NDDS Plugin.</a></p>
+
+<p><strong>Domain Randomizations:</strong></p>
+
+<ul>
+  <li>Number of / types / 3D poses / textures on distractor objects of primitive 3D shapes.</li>
+  <li>Numbers / textures / 3D poses of objects of interest from YCB objects set.</li>
+  <li>Uniform / textured or images from COCO as background images.</li>
+  <li>Directional lights with random orientation and intensity.</li>
+</ul>
+
+<p><strong>Photorealistic:</strong></p>
+
+<ul>
+  <li>Falling YCB objects in photo realistic scenes from standard UE4 virtual environments. These scenes are captured with different camera poses.</li>
+</ul>
+
+<blockquote>
+  <p>Notice that camera intrinsics randomization wasn’t necessary here since the method regresses heat-maps of 3D box and vector fields to the centroid. It uses these predicted 2D information / camera intrinsics (explicitly) / object sizes to predict the 3D pose.</p>
+</blockquote>
+
+<p>ADD (Average distance of 3D points on bounding boxes) pass rate vs distance threshold plots below measures successful pose detection within that threshold (higher is better). Notice how both DR and photorealistic images were necessary to get comparable performance to method trained on real world data (PoseCNN).</p>
+
+<div class="row mt-3">
+    <div class="col-sm mt-3 mt-md-0">
+        <img class="img-fluid rounded z-depth-1" src="/assets/img/blog/sim2real-for-manipulation/sim2real_9.png" />
+    </div>
+</div>
+
+<p>Some qualitative comparisons of DOPE with PoseCNN (real data) is shown below. Notice how DOPE produces tighter boxes and more robust to lighting conditions.</p>
+
+<div class="row mt-3">
+    <div class="col-sm mt-3 mt-md-0">
+        <img class="img-fluid rounded z-depth-1" src="/assets/img/blog/sim2real-for-manipulation/sim2real_10.png" />
+    </div>
+</div>
+
+<p><strong>Domain Randomization in Grasping:</strong></p>
+
+<p>Let’s look at some examples of domain randomizations applied to robotic grasping (both suction based and parallel jaw grasps) with emphasis on what aspects are randomized and their transfer success to real robot grasping.</p>
+
+<p><strong>Dex-Net 3.0:</strong></p>
+
+<p>Suction GQ(Grasp Quality)-CNN takes in a depth image patch centered at suction point and outputs a quality measure. The process of generating the quality measure labels is illustrated below:</p>
+
+<div class="row mt-3">
+    <div class="col-sm mt-3 mt-md-0">
+        <img class="img-fluid rounded z-depth-1" src="/assets/img/blog/sim2real-for-manipulation/sim2real_11.png" />
+    </div>
+</div>
+
+<p>Here are examples of few more labels generated with grasp robustness annotated 3D models:</p>
+
+<div class="row mt-3">
+    <div class="col-sm mt-3 mt-md-0">
+        <img class="img-fluid rounded z-depth-1" src="/assets/img/blog/sim2real-for-manipulation/sim2real_12.png" />
+    </div>
+</div>
+<p><strong>Simulator:</strong> Custom quasi-static physics model that simulates seal formation and ability to resist gravity and random external wrenches.</p>
+
+<p><strong>Randomizations:</strong> The graphical model shows the randomization parameters used in Dex-Net 3.0</p>
+
+<div class="row mt-3">
+    <div class="col-sm mt-3 mt-md-0">
+        <img class="img-fluid rounded z-depth-1" src="/assets/img/blog/sim2real-for-manipulation/sim2real_13.png" />
+    </div>
+</div>
+
+<p>PC: Dex-Net 3.0</p>
+
+<p>Here are the randomizations explicitly listed:</p>
+
+<ul>
+  <li>Sample a 3D object O uniformly from training set.</li>
+  <li>Sample a resting pose T_s and sample planar disturbance from U([-0.1, 0.1], [-1.0, 1.0], [0, 2π)) and apply the planar disturbance (x, y, θ) to T_s to obtain object pose T_o</li>
+  <li>μ coefficient of friction is sampled from N_+(0.5, 0.1)</li>
+  <li>Camera pose T_c is sampled in spherical coordinates (r, θ, ϕ) ∈ U([0.5, 0.7], (0, 2π, 0.01π, 0.1π)) where the camera optical axis intersections the table.</li>
+  <li>Suction grasps are uniformly sampled on object 3D mesh surface.</li>
+</ul>
+
+<p>For each such sampled grasp, the wrench resistance metric is computed and the point cloud for the 3D object mesh is rendered using sampled camera pose and known camera intrinsic.</p>
+
+<p>Zero shot transfer of policy (CEM) that optimizes the samples according to suction GQ-CNN is shown in video below:</p>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/dZIHmcaTJ_c" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+
+<p><strong>6DOF GraspNet:</strong></p>
+
+<p>The GraspNet framework has 2 components both of which take the point cloud corresponding to target object:</p>
+
+<ul>
+  <li>VAE (Variational Auto-Encoder) predicts 6-DOF grasp samples that has high coverage on the target object.</li>
+  <li>Grasp evaluator that takes 6-DOF grasp sample in addition to point cloud produced quality scores. Which is later used for refining the grasp sampled via VAE.</li>
+</ul>
+
+<p>The gradient on the grasp evaluator can be used to further refine the sampled grasps.</p>
+
+<p>Training both networks require positive grasp labels, which are generated entirely in simulation.</p>
+
+<p><strong>Simulator:</strong> NVIDIA FleX simulator.</p>
+
+<p><strong>Synthetic grasp data generation:</strong></p>
+
+<ul>
+  <li>An object is sampled from a subset of ShapeNet.</li>
+  <li>An approach based sampling scheme is used for generating grasp samples. Samples that are not in collision and non-zero object volume are selected for simulation.</li>
+  <li>Object mesh and gripper in the sampled pose are loaded in simulation. Surface friction and object density are kept constant (No randomizations ! really ?). The gripper is closed and a predefined shaking motion is executed. Grasps that keep the object between the grippers are marked as positive grasps.</li>
+  <li>Hard negative grasps are generated in neighborhood of positive grasps that are either in collision with gripper or zero object volume between grippers.</li>
+</ul>
+
+<p>The visualization of the grasp data generation:</p>
+
+<div class="row mt-3">
+    <div class="col-sm mt-3 mt-md-0">
+        <img class="img-fluid rounded z-depth-1" src="/assets/img/blog/sim2real-for-manipulation/sim2real_14.png" />
+    </div>
+</div>
+
+<p>Note that 6-DOF GraspNet doesn’t actually use YCB objects for training. This is just for illustrating the data generation process. PC: <a href="https://arxiv.org/abs/1912.05604">Billion ways to grasp</a></p>
+
+<p>Some of the positive grasp samples on bowls and boxes are shown below:</p>
+
+<div class="row mt-3">
+    <div class="col-sm mt-3 mt-md-0">
+        <img class="img-fluid rounded z-depth-1" src="/assets/img/blog/sim2real-for-manipulation/sim2real_15.png" />
+    </div>
+</div>
+
+<p>The performance of 6-DOF GraspNet on previously unseen YCB objects:</p>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/y5EJXeEiB1o" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+
+<h1 id="guided-domain-randomization">Guided domain randomization:</h1>
+
+<p>Previously, we saw several examples of randomized simulations that lead to successful transfer to real robotic tasks. These randomizations were chosen carefully around the nominal real world values and often tuned for real world transfer. This either becomes tedious when there are large number of parameters to choose for and very wide randomizations often leads to infeasible / sub-optimal solutions in simulations. We will look at two strategies for automating this:</p>
+
+<ul>
+  <li>Automatic domain randomization in the context of solving Rubik’s code.</li>
+  <li>Sim-Opt in the context of contact rich manipulation tasks which uses real world rollouts of policy.</li>
+</ul>
+
+<p><strong>Automatic Domain Randomization (ADR):</strong></p>
+
+<p>Let’s take a brief look at the overall framework used for Rubik’s cube solving before delving into ADR algorithm. Here is a nice overview of the entire framework:</p>
+
+<div class="row mt-3">
+    <div class="col-sm mt-3 mt-md-0">
+        <img class="img-fluid rounded z-depth-1" src="/assets/img/blog/sim2real-for-manipulation/sim2real_16.png" />
+    </div>
+</div>
+
+<p>Overview of framework for solving the Rubik’s cube. Giiker is a “smart” Rubik’s cube that has sensing of face angles upto 5⁰ resolution.</p>
+
+<p>Although, the vision part of network is also trained entirely in simulation with ADR , let’s focus on hard controller policy part that manipulates the Rubik’s cube. Note that optimal sequence of rotations of Rubik’s cube faces are solved by <a href="https://en.wikipedia.org/wiki/Optimal_solutions_for_Rubik%27s_Cube#Kociemba's_algorithm">Kociemba’s algorithm</a></p>
+
+<p>The task of solving the Rubik’s cube now reduces to the problem of successfully executing face rotations and flip actions to make sure the face to be rotated is on top.</p>
+
+<p>The shadow robotic hand is used for performing the flip and rotations on the Rubik’s cube. Here are the details of inputs and outputs of the policy network and reward functions.</p>
+
+<p><strong>Inputs:</strong> Observed fingertip positions, observed cube pose, goal cube pose, noisy relative cube orientations, goal face angles, noisy relative cube face angles.</p>
+
+<p><strong>Outputs:</strong> shadow hand has 20 joints that can be actuated, and the policy outputs a discretized actions space of 11 bins per joint.</p>
+
+<p><strong>Reward function:</strong> Combination of:</p>
+
+<ul>
+  <li>Distance between present cube state to goal state.</li>
+  <li>Additional reward for achieving the goal.</li>
+  <li>Penalty for dropping the cube.</li>
+</ul>
+
+<p>Also, episodes are terminated based on 50 consecutive successes / dropping the cube or time out while trying to achieve the goal.</p>
+
+<p><strong>Simulator:</strong> MuJoCo</p>
+
+<p>Also, a lot of effort has been put into simulating the details of Rubik’s cube dynamics and Shadow robot hand.</p>
+
+<div class="row mt-3">
+    <div class="col-sm mt-3 mt-md-0">
+        <img class="img-fluid rounded z-depth-1" src="/assets/img/blog/sim2real-for-manipulation/sim2real_17.png" />
+    </div>
+</div>
+
+<p>Visualization of Rubik’s cube task in MuJoCo simulator.</p>
+
+<p><strong>ADR Algorithm:</strong></p>
+
+<p>Compared to naive domain randomization:</p>
+
+<ul>
+  <li><strong>Curriculum learning:</strong> ADR gradually increases the task difficult leading easier policy converge.</li>
+  <li><strong>Automatic:</strong> Removes the need for manual tuning of parameters, that could be non-intuitive for large parameter set.</li>
+</ul>
+
+<p><strong>Randomizations:</strong></p>
+
+<ul>
+  <li>Simulator physics parameters such as friction between cube, robot hand, cube size, parameters of the hand model etc.</li>
+  <li>Custom physics parameters such as action latency, time step variance.</li>
+  <li>Observation noise to cube poses, finger positions at episode level as well as each step level.</li>
+</ul>
+
+<div class="row mt-3">
+    <div class="col-sm mt-3 mt-md-0">
+        <img class="img-fluid rounded z-depth-1" src="/assets/img/blog/sim2real-for-manipulation/sim2real_18.png" />
+    </div>
+</div>
+
+<p>Overview of ADR</p>
+
+<p>All simulation parameters are sampled from uniform distribution over a range (ϕ_L, ϕ_H). Thus is distribution of simulator parameters for <em>d</em> parameters is given by:</p>
+
+<div class="row mt-3">
+    <div class="col-sm mt-3 mt-md-0">
+        <img class="img-fluid rounded z-depth-1" src="/assets/img/blog/sim2real-for-manipulation/sim2real_19.png" />
+    </div>
+</div>
+
+<p>And entropy is used for measuring the complexity of training distribution, which for product of uniform distribution is:</p>
+
+<div class="row mt-3">
+    <div class="col-sm mt-3 mt-md-0">
+        <img class="img-fluid rounded z-depth-1" src="/assets/img/blog/sim2real-for-manipulation/sim2real_20.png" />
+    </div>
+</div>
+
+<p>Task performance (i.e number of success in a given episode) thresholds (t_L, t_H) is used to adjust the parameters ϕ. ADR starts with a single simulation parameter value. At each iteration, one of the boundary (ϕ_L or ϕ_H) value of one of the randomization parameter ϕ_i is chosen and the performance is evaluated and added to a buffer (D_L or D_H). After the buffer is of adequate size, depending on whether the overall performance is above t_H or below t_L, ϕ_i range is increased or ϕ_i range is decreased respectively.</p>
+
+<div class="row mt-3">
+    <div class="col-sm mt-3 mt-md-0">
+        <img class="img-fluid rounded z-depth-1" src="/assets/img/blog/sim2real-for-manipulation/sim2real_21.png" />
+    </div>
+</div>
+
+<p>Detailed algorithm for ADR</p>
+
+<p><strong>Sim2Sim:</strong> The benefit of curricular learning was studied in the context of Sim2sim transfer of bringing the cube to goal orientation. The test set is previously hand tuned domain randomization scheme which was never presented to ADR. As can be seen, as the entropy of domain randomization goes up, as does the performance on the test simulation environment.</p>
+
+<div class="row mt-3">
+    <div class="col-sm mt-3 mt-md-0">
+        <img class="img-fluid rounded z-depth-1" src="/assets/img/blog/sim2real-for-manipulation/sim2real_22.png" />
+    </div>
+</div>
+
+<p>ADR is compared against several fixed randomization schemes that were reached via curriculum training, as can be seen ADR reaches higher performance quickly and asymptotically similar.</p>
+
+<div class="row mt-3">
+    <div class="col-sm mt-3 mt-md-0">
+        <img class="img-fluid rounded z-depth-1" src="/assets/img/blog/sim2real-for-manipulation/sim2real_23.png" />
+    </div>
+</div>
+
+<p><strong>Sim2Real:</strong> The table below shows performance of ADR trained policy in Sim and in Real for different amounts of training. Notice how the entropy of P_ϕ keeps growing as the training progresses.</p>
+
+<div class="row mt-3">
+    <div class="col-sm mt-3 mt-md-0">
+        <img class="img-fluid rounded z-depth-1" src="/assets/img/blog/sim2real-for-manipulation/sim2real_24.png" />
+    </div>
+</div>
+
+<p>Here is a successful execution of solving the Rubik’s cube from a random shuffle:</p>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/kVmp0uGtShk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+
+<p><strong>Meta-learning perspective:</strong> Because the LSTM policy doesn’t have enough capacity to remember all the variations of dynamics, it learns to adapt the policy to particular instantiations of dynamics during execution (i.e online system identification).</p>
+
+<p>This is studied by perturbing the memory of LSTM / changing the dynamics on the fly or restraining a random joint. As can be seen each of the perturbations, the amount of time needed to complete the sub-goal suddenly goes up as the perturbation is introduced and after several executions the policy calibrates itself to new dynamics and the performance returns to it’s corresponding baseline.</p>
+
+<div class="row mt-3">
+    <div class="col-sm mt-3 mt-md-0">
+        <img class="img-fluid rounded z-depth-1" src="/assets/img/blog/sim2real-for-manipulation/sim2real_25.png" />
+    </div>
+</div>
+
+<div class="row mt-3">
+    <div class="col-sm mt-3 mt-md-0">
+        <img class="img-fluid rounded z-depth-1" src="/assets/img/blog/sim2real-for-manipulation/sim2real_26.png" />
+    </div>
+</div>
+
+<div class="row mt-3">
+    <div class="col-sm mt-3 mt-md-0">
+        <img class="img-fluid rounded z-depth-1" src="/assets/img/blog/sim2real-for-manipulation/sim2real_27.png" />
+    </div>
+</div>
+
+<p>Plots showing the online system identification effects.</p>
+
+<h1 id="sim-opt">Sim-Opt:</h1>
+
+<p>Sim-opt framework is trying to find parameters of simulation distribution that makes discrepancy between observed trajectory in simulation vs in real world by executing the trained policy.</p>
+
+<p>It showcases the approach with two real world robotic tasks on two separate robotic hands:</p>
+
+<ul>
+  <li>Drawer opening with Franka Emika Panda.</li>
+  <li>Swing peg in hole task with ABB YuMi.</li>
+</ul>
+
+<div class="row mt-3">
+    <div class="col-sm mt-3 mt-md-0">
+        <img class="img-fluid rounded z-depth-1" src="/assets/img/blog/sim2real-for-manipulation/sim2real_28.png" />
+    </div>
+</div>
+
+<p>Tasks solved by Sim-Opt</p>
+
+<p>Here is the overview of SimOpt framework:</p>
+
+<div class="row mt-3">
+    <div class="col-sm mt-3 mt-md-0">
+        <img class="img-fluid rounded z-depth-1" src="/assets/img/blog/sim2real-for-manipulation/sim2real_29.png" />
+    </div>
+</div>
+
+<p>Overview of SimOpt</p>
+
+<p>Just to recap domain randomization tries to find θ (the policy parameters) such that the same policy generalizes across several randomizations ξ ∈ P_ϕ of simulator dynamics.</p>
+
+<div class="row mt-3">
+    <div class="col-sm mt-3 mt-md-0">
+        <img class="img-fluid rounded z-depth-1" src="/assets/img/blog/sim2real-for-manipulation/sim2real_30.png" />
+    </div>
+</div>
+
+<p>R(τ) is reward of the trajectory τ generated by running the policy π(θ)</p>
+
+<p>SimOpt tries to minimize the following objective w.r.t simulator parameters ϕ</p>
+
+<div class="row mt-3">
+    <div class="col-sm mt-3 mt-md-0">
+        <img class="img-fluid rounded z-depth-1" src="/assets/img/blog/sim2real-for-manipulation/sim2real_31.png" />
+    </div>
+</div>
+
+<p>D is the discrepancy measure between simulated trajectory and real trajectory when running the policy π(θ). In this paper this is weighted average of L1 and L2 distances.</p>
+
+<p>To reduce the amount of real world robot execution ϕ is only updated after a policy has fully converged in simulation. The iterative updates to ϕ is done as follows:</p>
+
+<div class="row mt-3">
+    <div class="col-sm mt-3 mt-md-0">
+        <img class="img-fluid rounded z-depth-1" src="/assets/img/blog/sim2real-for-manipulation/sim2real_32.png" />
+    </div>
+</div>
+
+<p>D_KL constraint is used to ensure the stability of optimization.</p>
+
+<p>Here is the full algorithm for SimOpt:</p>
+
+<div class="row mt-3">
+    <div class="col-sm mt-3 mt-md-0">
+        <img class="img-fluid rounded z-depth-1" src="/assets/img/blog/sim2real-for-manipulation/sim2real_33.png" />
+    </div>
+</div>
+
+<p>The number of iterations of sim-opt iteration is just N=3 iterations.</p>
+
+<p>Here are some details of simulator randomizations. Let’s look at swing peg in hole task:</p>
+
+<p><strong>Simulator:</strong> NVIDIA FleX</p>
+
+<p><strong>Simulation Randomizations:</strong></p>
+
+<ul>
+  <li><strong>Swing peg in hole tasks:</strong></li>
+</ul>
+
+<div class="row mt-3">
+    <div class="col-sm mt-3 mt-md-0">
+        <img class="img-fluid rounded z-depth-1" src="/assets/img/blog/sim2real-for-manipulation/sim2real_34.png" />
+    </div>
+</div>
+
+<p>The adaptation of above simulation parameter covariance matrix and corresponding states at the end policy after fully trained.</p>
+
+<div class="row mt-3">
+    <div class="col-sm mt-3 mt-md-0">
+        <img class="img-fluid rounded z-depth-1" src="/assets/img/blog/sim2real-for-manipulation/sim2real_35.png" />
+    </div>
+</div>
+
+<p>The 1st is the initialization of covariance matrix.</p>
+
+<div class="row mt-3">
+    <div class="col-sm mt-3 mt-md-0">
+        <img class="img-fluid rounded z-depth-1" src="/assets/img/blog/sim2real-for-manipulation/sim2real_36.png" />
+    </div>
+</div>
+
+<p>Although simulation parameters are quite exhaustive the policy inputs are quite minimal. 7 DoF joint positions and 3D position of the peg are inputs to the policy. The reward function is combination of distance from peg from hole, the angle alignment with hole and task success.</p>
+
+<p>The fact that SimOpt needs to run the real robot execution in the training loop seems like it’s asking for a lot. However, notice that no reward function / no full state observations are needed in the real world execution step. All that is needed is to just run the learnt policy on the real robot. This seems like on the fly system identification such that policy trained on P_ϕ(ξ) generalizes on real robot.</p>
+
+<p>The video below shows execution of policy trained via SimOpt</p>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/nilcJY5Kdt8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+
+<h1 id="conclusion"><strong>Conclusion:</strong></h1>
+
+<p>We have seen several examples of successful transfers of sim2real for perception, grasping and feedback control policies. In all the examples, a lot of care has been taken to make the simulation as realistic as possible and choosing the parameters to randomize over. We also saw examples of guided domain randomizations, that simplify the task of manual tuning during sim2real transfer and avoids the policy convergence issues due to extra wide policy specifications.</p>
+
+<p>Finally, will leave you with a comic (or a cautionary tale ?)</p>
+
+<div class="row mt-3">
+    <div class="col-sm mt-3 mt-md-0">
+        <img class="img-fluid rounded z-depth-1" src="/assets/img/blog/sim2real-for-manipulation/sim2real_37.jpeg" />
+    </div>
+</div>
+
+<p>PC: <a href="https://twitter.com/dileeplearning">https://twitter.com/dileeplearning</a></p>
+
+<h1 id="references"><strong>References</strong></h1>
+
+<ul>
+  <li><a href="https://lilianweng.github.io/lil-log/2019/05/05/domain-randomization.html">Domain Randomization for Sim2Real Transfer</a></li>
+  <li><a href="https://arxiv.org/abs/1703.06907">Domain Randomization for Transferring Deep Neural Networks from Simulation to the Real World</a></li>
+  <li><a href="https://arxiv.org/abs/1710.06537">Sim-to-Real Transfer of Robotic Control with Dynamics Randomization</a></li>
+  <li><a href="https://arxiv.org/abs/1809.05825">SD-MaskRCNN: Segmenting Unknown 3D Objects from Real Depth Images using Mask R-CNN Trained on Synthetic Data</a></li>
+  <li><a href="https://arxiv.org/pdf/1809.10790.pdf">DOPE: Deep Object Pose Estimation for Semantic Robotic Grasping of Household Objects</a></li>
+  <li><a href="https://arxiv.org/abs/1709.06670">Dex-Net 3.0: Computing Robust Robot Vacuum Suction Grasp Targets in Point Clouds using a New Analytic Model and Deep Learning</a></li>
+  <li><a href="https://arxiv.org/pdf/1905.10520.pdf">6-DOF GraspNet: Variational Grasp Generation for Object Manipulation</a></li>
+  <li>[Dexterous] <a href="https://arxiv.org/abs/1808.00177">Learning dexterous in-hand manipulation.</a></li>
+  <li>[ADR] <a href="https://arxiv.org/abs/1910.07113">Solving Rubik’s Cube with a Robot Hand</a></li>
+  <li><a href="https://arxiv.org/abs/1810.05687">Sim-Opt: Closing the Sim-to-Real Loop: Adapting Simulation Randomization with Real World Experience</a></li>
+</ul>
+
+  </article>
+
+  
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+      var disqus_shortname  = 'darshanhegde';
+      var disqus_identifier = '/blog/2020/sim2real-for-robotic-manipulation';
+      var disqus_title      = "Sim2real For Robotic Manipulation";
+      (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  
+
+</div>
+
+    </div>
+
+    <!-- Footer -->
+
+    
+<footer class="fixed-bottom">
+  <div class="container mt-0">
+    &copy; Copyright 2023 Darshan  Hegde.
+    Powered by <a href="http://jekyllrb.com/" target="_blank">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio">al-folio</a> theme. Hosted by <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>. Photos from <a href="https://unsplash.com" target="_blank">Unsplash</a>.
+
+    
+    
+  </div>
+</footer>
+
+
+
+  </body>
+
+  <!-- Bootsrap & MDB scripts -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.4.4/umd/popper.min.js" integrity="sha512-eUQ9hGdLjBjY3F41CScH3UX+4JDSI9zXeroz7hJ+RteoCaY+GP/LDoM8AO+Pt+DRFw3nXqsjh9Zsts8hnYv8/A==" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha512-M5KW3ztuIICmVIhjSqXe01oV2bpe248gOxqmlcYrEzAvws7Pw3z6BK0iGbrwvdrUQUhi3eXgtxp5I8PDo9YfjQ==" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/js/mdb.min.js" integrity="sha512-Mug9KHKmroQFMLm93zGrjhibM2z2Obg9l6qFG2qKjXEXkMp/VDkI4uju9m4QKPjWSwQ6O2qzZEnJDEeCw0Blcw==" crossorigin="anonymous"></script>
+
+  
+<!-- Mansory & imagesLoaded -->
+<script defer src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+<script defer src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
+<script defer src="/assets/js/mansory.js" type="text/javascript"></script>
+
+
+  
+
+
+<!-- Load Common JS -->
+<script src="/assets/js/common.js"></script>
+
+
+</html>
